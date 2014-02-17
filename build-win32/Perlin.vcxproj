@@ -71,6 +71,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\perlin.cpp" />
+    <ClCompile Include="..\src\rough.cpp" />
+    <ClCompile Include="..\src\smooth.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\rough.h" />
