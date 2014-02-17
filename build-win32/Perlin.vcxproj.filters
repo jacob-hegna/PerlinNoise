@@ -9,5 +9,6 @@
   <ItemGroup>
     <ClInclude Include="..\src\rough.h" />
     <ClInclude Include="..\src\smooth.h" />
+    <ClInclude Include="..\src\perlin.h" />
   </ItemGroup>
 </Project>

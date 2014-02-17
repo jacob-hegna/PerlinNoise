@@ -15,16 +15,16 @@ SmoothNoise::~SmoothNoise(void) {
 
 // static function
 float SmoothNoise::interpolate(float x0, float x1, float alpha) {
-    double mu2 = (1-cos(alpha*M_PI))/2;
-    return(x0*(1-alpha)+x0*mu2);
-    //return (x0 * (1 - alpha) + alpha * x1);
+    //float mu2 = (1-cos(alpha*M_PI))/2;
+    //return (x0*(1-alpha)+x1*mu2);
+    return (x0 * (1 - alpha) + alpha * x1);
 }
 
 void SmoothNoise::init(int w, int h, int octave) {
     RoughData rough(w, h);
 
     int period    = 1 << octave;
-    int frequency = 1.f / (float)period;
+    float frequency = 1.f / (float)period;
 
     for(int i = 0; i < w; ++i) {
         std::vector<float> temp;
@@ -32,13 +32,13 @@ void SmoothNoise::init(int w, int h, int octave) {
 
         int i0 = (i / period) * period;
         int i1 = (i0 + period) % w;
-        float horizontalBlend = (i - i0) * frequency;
+        float horizontalBlend = (i - i0) * (float)frequency;
 
         for(int j = 0; j < h; ++j) {
             int j0 = (j / period) * period;
             int j1 = (j0 + period) % h;
 
-            float verticalBlend = (j - j0) * frequency;
+            float verticalBlend = (j - j0) * (float)frequency;
 
             float top = interpolate(rough.at(i0, j0),
                                     rough.at(i1, j0),

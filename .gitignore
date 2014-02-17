@@ -7,3 +7,4 @@ build-win32/*
 *.pdb
 *.dll
 *.png
+*.csv

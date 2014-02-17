@@ -2,6 +2,10 @@
 #define _PERLIN_H_
 
 #include <vector>
+#include <string>
+#include <iostream>
+
+#include <png++/png.hpp>
 
 #include "smooth.h"
 
@@ -13,6 +17,7 @@ public:
 
     void init(int w, int h, int octaves);
 
+    static void output(std::vector<std::vector<float>> data, std::string path);
     float at(int x, int y);
 
     std::vector<std::vector<float>> getData(void);
