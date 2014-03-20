@@ -39,7 +39,6 @@ void PerlinNoise::init(int w, int h, int octaves) {
                 _data.at(i).at(j) += smoothData.at(o).at(i).at(j) * amplitude;
             }
         }
-        output(smoothData.at(o), "test" + std::to_string(o));
     }
 
     for(int i = 0; i < w; ++i) {
@@ -70,7 +69,7 @@ void PerlinNoise::output(std::vector<std::vector<float>> data, std::string path)
             image[i][j] = png::rgb_pixel(tempColor, tempColor, tempColor);
 
             file << tempValue;
-            if (j != h) file << ", ";
+            if (j != h) file << ",";
         }
         file << std::endl;
     }

@@ -8,9 +8,9 @@
 int main(int argc, char *argv[]) {
     srand(time(NULL));
     
-    int w = 512;
-    int h = 512;
-    PerlinNoise data(w, h, 4);
+    int w = 2048;
+    int h = 2048;
+    PerlinNoise data(w, h, 10);
 
     PerlinNoise::output(data.getData(), "heightmap");
 }

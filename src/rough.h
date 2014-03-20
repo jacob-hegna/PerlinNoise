@@ -2,6 +2,7 @@
 #define _ROUGH_H_
 
 #include <vector>
+#include <cstdlib>
 
 class RoughData {
 public:
